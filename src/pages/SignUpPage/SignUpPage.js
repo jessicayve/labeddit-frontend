@@ -5,7 +5,7 @@ import { useState } from "react"
 const SignupPage = () => {
 
   const [form, setForm] = useState({
-    apelido: "",
+    name: "",
     email: "",
     password: "",
   });
@@ -30,8 +30,8 @@ Olá, boas vindas ao LabEddit ;)
 </Titulo> 
 
     <Input 
-    value={form.apelido} 
-    name={"apelido"} 
+    value={form.name} 
+    name={"name"} 
     onChange={changeForm}  
     placeholder="Apelido" />
 
