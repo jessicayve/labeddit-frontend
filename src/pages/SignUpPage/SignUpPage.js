@@ -52,10 +52,12 @@ Olá, boas vindas ao LabEddit ;)
 <TextoContainer>
     <div>
   <p>Ao continuar, você concorda com o nosso
-  <span className="textocolorido">  Contrato de usuário </span> e nossa <span className="textocolorido"> Política de Privacidade </span> <br/> </p>
+  <span className="textocolorido">  Contrato de usuário </span> 
+  e nossa <span className="textocolorido"> Política de Privacidade </span> <br/> </p>
    
-     <p> <input type="checkbox"></input> Eu concordo em receber emails sobre coisas legais <br/> no LabEddit  </p>
+ <p> <input type="checkbox"></input> Eu concordo em receber emails sobre coisas legais <br/> no LabEddit  </p>
  </div>
+  
 </TextoContainer>
 
     <Button onClick={()=>signup()} >Cadastrar</Button>
