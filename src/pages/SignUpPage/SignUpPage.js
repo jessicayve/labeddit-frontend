@@ -11,6 +11,7 @@ import { GlobalContext } from '../../context/GlobalContext'
 const SignupPage = () => {
 
 
+
   const context = useContext(GlobalContext)
   const navigate = useNavigate()
 
@@ -69,8 +70,7 @@ Olá, boas vindas ao LabEddit ;)
     <Input 
     value={form.name} 
     name={"name"} 
-    onChange={onChangeForm}  
-    placeholder="Apelido" />
+
 
     <Input 
     value={form.email}  
@@ -88,10 +88,12 @@ Olá, boas vindas ao LabEddit ;)
 <TextoContainer>
     <div>
   <p>Ao continuar, você concorda com o nosso
-  <span className="textocolorido">  Contrato de usuário </span> e nossa <span className="textocolorido"> Política de Privacidade </span> <br/> </p>
+  <span className="textocolorido">  Contrato de usuário </span> 
+  e nossa <span className="textocolorido"> Política de Privacidade </span> <br/> </p>
    
-     <p> <input type="checkbox"></input> Eu concordo em receber emails sobre coisas legais <br/> no LabEddit  </p>
+ <p> <input type="checkbox"></input> Eu concordo em receber emails sobre coisas legais <br/> no LabEddit  </p>
  </div>
+  
 </TextoContainer>
 
     <Button onClick={()=>signup()} > {isLoading ?  <CircularProgress color="inherit"  /> : "Cadastrar"}</Button>
