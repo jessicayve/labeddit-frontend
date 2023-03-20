@@ -32,13 +32,13 @@ align-items: center;
 margin-top: 48px;
 padding: 13px 133px;
 width: 365px;
-height: 51px;
+height: 58px;
 border-radius: 27px;
 background: linear-gradient(90deg, #FF6489 0%, #F9B24E 100%);
 border-radius: 27px;
 font-family: 'Noto Sans';
 font-weight: 700;
-font-size: 18px;
+font-size: 20px;
 text-align: center;
 color: #FFFFFF;
 border: none;
@@ -59,23 +59,26 @@ background: linear-gradient(90deg, #FF6489 0%, #F9B24E 100%);
 export const Button = styled.button`
 display: flex;
 flex-direction: column;
-margin-top: 24px;
-margin-left: 6px;
+justify-content: center;
+margin: 0 auto;
 align-items: center;
 padding: 13px 90px;
 gap: 10px;
 width: 365px;
-height: 51px;
+height: 58px;
+left: 29px;
+top: 587px;
 border: 1px solid #FE7E02;
 border-radius: 27px;
 font-family: 'Noto Sans';
+font-style: normal;
 font-weight: 700;
-font-size: 18px;
+font-size: 20px;
 text-align: center;
 color: #FE7E02;
 flex: none;
-flex-grow: 0;
 background-color: white;
+margin-top: 5%; 
 
 `
 
