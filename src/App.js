@@ -1,9 +1,22 @@
+import { useState } from "react";
+import { GlobalContext } from "./context/GlobalContext";
+import Router from "./routes/Router";
+
 
 
 function App() {
+  
+
+
   return (
-    <div>Cookenu</div>
-  )
+   
+      <>
+      <Router/>
+      </>
+      
+     
+   
+  );
 }
 
 export default App;
