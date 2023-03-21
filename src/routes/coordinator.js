@@ -10,5 +10,6 @@ export const goToLoginPage = (navigate) => {
     navigate("/")
 }
 
-export const goToFeedComments = (navigate, id) =>{ navigate(`/feed/${id}`)
+export const goToDetailsPage = (navigate, post) =>{
+    navigate(`/detailspage/${post}`)
 }

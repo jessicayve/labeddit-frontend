@@ -1,17 +1,23 @@
-import Header from "../../components/Header"
-import { useNavigate } from "react-router-dom"
+import axios from 'axios'
+import React, { useContext, useEffect, useState } from 'react'
 import {GlobalContext} from "../../context/GlobalContext"
-import { useContext, useEffect, useState } from "react";
-import { goToLoginPage } from "../../routes/coordinator"
-import { PostBox } from "./FeedPageStyled"
-import axios from "axios"
-import { Linha } from "../LoginPage/LoginPageStyled"
-import { BASE_URL, TOKEN_NAME } from "../../constants/url"
-import CardPost from "../../components/CardPost"
+import { useNavigate, useParams, useSearchParams } from "react-router-dom"
+import { TOKEN_NAME,   BASE_URL } from '../../constants/url'
+import Header from '../../components/Header'
+import { goToLoginPage } from '../../routes/coordinator'
+import { CardContainer } from '../../components/CardPostStyled'
+import likeIcon from "../../assets/likeIcon.png"
+import dislikeIcon from "../../assets/dislikeIcon.png"
+import comentario from "../../assets/comentario.png"
+import { Linha } from '../LoginPage/LoginPageStyled'
+import { PostBox } from '../FeedPage/FeedPageStyled'
+import CardPost from '../../components/CardPost'
 
 
 
-const FeedPage = () => {
+
+
+const DetailsPage = (props) => {
 
   const navigate = useNavigate()
 
@@ -60,13 +66,10 @@ const FeedPage = () => {
     }
   }
 
-  
-  
   return (
-    <>
-    <Header/>
-  
-    <PostBox  >
+   <>
+   <Header/>
+   <PostBox>
    <form onSubmit={createPost}>
       <section>
         <input 
@@ -85,11 +88,9 @@ const FeedPage = () => {
     {posts.map((post) => {
       return <CardPost key={post.id} post={post}  />;
     })}
- 
-
-</>
-
+    
+   </>
   )
 }
 
-export default FeedPage
+export default DetailsPage
