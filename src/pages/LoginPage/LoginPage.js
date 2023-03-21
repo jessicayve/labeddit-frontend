@@ -60,7 +60,7 @@ export const LoginPage = () => {
           <p>O projeto de rede social da Labenu</p>
         </div>
       </Container>
-
+      <form onSubmit={login} autoComplete="off"> 
       <Input
         value={form.email}
         onChange={onChangeForm}
@@ -78,8 +78,10 @@ export const LoginPage = () => {
         placeholder="Senha"
 
       />
+      
+      </form>
 
-      <BtnContinuar onClick={login} >  {isLoading ?  <CircularProgress color="inherit"  /> : "Continuar"} </BtnContinuar>
+      <BtnContinuar onClick={() => goToFeedPage(navigate)} >  {isLoading ?  <CircularProgress color="inherit"  /> : "Continuar"} </BtnContinuar>
 
       <Linha></Linha>
 

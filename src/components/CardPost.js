@@ -7,10 +7,12 @@ import { GlobalContext } from "../context/GlobalContext"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
 import { BASE_URL, TOKEN_NAME } from "../constants/url"
+import {goToDetailsPage} from "../routes/coordinator"
 
 
 
 const CardPost = (props) => {
+    const navigate = useNavigate()
 
     const { post } = props
 
@@ -57,10 +59,10 @@ const CardPost = (props) => {
             }
 
             const body = {
-                dislike: true
+                like: false
             }
 
-            await axios.put(BASE_URL + `/posts/${post.id}/dislike`, body, config)
+            await axios.put(BASE_URL + `/posts/${post.id}/like`, body, config)
             setIsLoading(false)
             fetchPosts()
         } catch (error) {
@@ -68,8 +70,10 @@ const CardPost = (props) => {
         }
     }
 
+    
+
     return (
-        <CardContainer>
+        <CardContainer onClick={() => goToDetailsPage(navigate,post.id)}>
             <div>
                 <h2>Enviado por:{props.post.creator.creatorName} </h2>
                 <p>{props.post.content} </p>
@@ -83,20 +87,24 @@ const CardPost = (props) => {
                             style={{ cursor: "pointer" }}
                             alt="like" />
 
-        {" "} {post.like}
+        {" "}  {post.likes}
 
                         <img
                             src={dislikeIcon}
                             alt="dislike"
                             onClick={() => dislike(post.id)}
                             style={{ cursor: "pointer" }} />
+                
+                          
 
                     </span>
 
                     <span className="comentario">
                         <img src={comentario}
-                            alt="comentario" />
-                        1
+                            alt="comentario" 
+                           
+                            />
+                        
 
                     </span>
                 </div>

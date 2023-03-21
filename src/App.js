@@ -43,10 +43,7 @@ const context = {
   posts,
   fetchPosts
  
-};
-
-
-
+}
   return (
    
     <GlobalContext.Provider value={context}>
