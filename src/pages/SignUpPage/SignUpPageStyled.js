@@ -24,6 +24,8 @@ height: 50px;
 margin: 0 auto;
 display: flex;
 margin-bottom: 12px;
+border: 1px solid #D5D8DE;
+border-radius: 4px;
 
 
 `

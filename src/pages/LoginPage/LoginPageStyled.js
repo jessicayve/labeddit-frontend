@@ -23,6 +23,8 @@ display: flex;
 flex-direction: column;
 align-items: center;
 margin-bottom: 20px;
+border: 1px solid #D5D8DE;
+border-radius: 4px;
 `
 export const BtnContinuar = styled.button`
 display: flex;
@@ -51,6 +53,7 @@ flex-direction: column;
 justify-content: center;
 margin: 0 auto;
 height: 1px;
+width: 90vw;
 border: none;
 margin-top: 20px;
 background: linear-gradient(90deg, #FF6489 0%, #F9B24E 100%);
