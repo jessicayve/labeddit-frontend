@@ -23,17 +23,15 @@ const SignupPage = () => {
       password: ""
   })
 
-  useEffect(() => {
-    if (context.isAuth) {
-        goToFeedPage(navigate)
-    }
-})
 
   const onChangeForm = (event) => {
       setForm({ ...form, [event.target.name]: event.target.value })
   }
 
   const signup = async () => {
+
+  
+
       try {
           setIsLoading(true)
 
@@ -50,7 +48,7 @@ const SignupPage = () => {
 
           window.localStorage.setItem("labeddit-token", response.data.token)
           setIsLoading(false)
-          context.setIsAuth(true)
+          
         
 
           goToFeedPage(navigate)
@@ -67,7 +65,7 @@ const SignupPage = () => {
  <Titulo>  
 Olá, boas vindas ao LabEddit ;)
 </Titulo> 
-
+<form onSubmit={signup}>
     <Input 
    value={form.name}
    onChange={onChangeForm}
@@ -89,7 +87,7 @@ Olá, boas vindas ao LabEddit ;)
     onChange={onChangeForm} 
     type={"password"} 
     placeholder="Senha"/>
-
+</form>
 <TextoContainer>
     <div>
   <p>Ao continuar, você concorda com o nosso
@@ -101,7 +99,7 @@ Olá, boas vindas ao LabEddit ;)
   
 </TextoContainer>
 
-    <Button onClick={()=>signup()} > {isLoading ?  <CircularProgress color="inherit"  /> : "Cadastrar"}</Button>
+    <Button onClick={() => goToFeedPage(navigate)} autoComplete="off"> {isLoading ?  <CircularProgress color="inherit"  /> : "Cadastrar"}</Button>
 
 </>
 )

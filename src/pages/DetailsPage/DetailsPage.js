@@ -66,8 +66,6 @@ const DetailsPage = (props) => {
     }
   }
 
-  
-  
 
   return (
    <>

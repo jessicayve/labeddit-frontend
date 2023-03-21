@@ -66,7 +66,7 @@ const FeedPage = () => {
     <>
     <Header/>
   
-    <PostBox>
+    <PostBox  >
    <form onSubmit={createPost}>
       <section>
         <input 
