@@ -1,4 +1,4 @@
-# Título do projeto
+# Labeddit
 
 Labeddit é uma rede social da labenu que usa de posts, comentários e curtidas para interação dos usuários cadastrados.
 
