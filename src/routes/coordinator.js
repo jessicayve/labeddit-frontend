@@ -10,6 +10,3 @@ export const goToLoginPage = (navigate) => {
     navigate("/")
 }
 
-export const goToDetailsPage = (navigate, post) =>{
-    navigate(`/detailspage/${post}`)
-}

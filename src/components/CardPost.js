@@ -73,7 +73,7 @@ const CardPost = (props) => {
     
 
     return (
-        <CardContainer onClick={() => goToDetailsPage(navigate,post.id)}>
+        <CardContainer >
             <div>
                 <h2>Enviado por:{props.post.creator.creatorName} </h2>
                 <p>{props.post.content} </p>
