@@ -23,11 +23,11 @@ const SignupPage = () => {
       password: ""
   })
 
-  // useEffect(() => {
-  //     if (context.isAuth) {
-  //         goToFeedPage(navigate)
-  //     }
-  // })
+  useEffect(() => {
+    if (context.isAuth) {
+        goToFeedPage(navigate)
+    }
+})
 
   const onChangeForm = (event) => {
       setForm({ ...form, [event.target.name]: event.target.value })
@@ -48,13 +48,14 @@ const SignupPage = () => {
               body
           )
 
-          window.localStorage.setItem("tabeddit-token", response.data.token)
+          window.localStorage.setItem("labeddit-token", response.data.token)
           setIsLoading(false)
           context.setIsAuth(true)
+        
 
           goToFeedPage(navigate)
       } catch (error) {
-          console.log(error)
+          console.log(error.response.data)
           setIsLoading(false)
       }
   }
@@ -68,15 +69,19 @@ Olá, boas vindas ao LabEddit ;)
 </Titulo> 
 
     <Input 
-    value={form.name} 
-    name={"name"} 
+   value={form.name}
+   onChange={onChangeForm}
+   name="name"
+   placeholder="Apelido"
+   autoComplete='off'/>
 
 
-    <Input 
+    <Input
     value={form.email}  
     name={"email"} 
     onChange={onChangeForm} 
-    placeholder="E-mail"/>
+    placeholder="E-mail"
+    autoComplete='off'/>
 
     <Input 
     name={"password"}
