@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 import {GlobalContext} from "../../context/GlobalContext"
 import { useContext, useEffect, useState } from "react";
 import { goToLoginPage } from "../../routes/coordinator"
-import { StylePost } from "./FeedPageStyled"
+import { PostBox } from "./FeedPageStyled"
 import axios from "axios"
 import { Linha } from "../LoginPage/LoginPageStyled"
 import { BASE_URL, TOKEN_NAME } from "../../constants/url"
@@ -51,7 +51,7 @@ const FeedPage = () => {
       }
 
       await axios.post(BASE_URL + "/posts", body, config)
-      
+
       setPostContent("")
       setIsLoading(false)
       fetchPosts()
@@ -66,7 +66,7 @@ const FeedPage = () => {
     <>
     <Header/>
   
-    <StylePost>
+    <PostBox>
    <form onSubmit={createPost}>
       <section>
         <input 
@@ -81,7 +81,7 @@ const FeedPage = () => {
       </form>
     <Linha/>
 
-    </StylePost>
+    </PostBox>
     {posts.map((post) => {
       return <CardPost key={post.id} post={post}  />;
     })}

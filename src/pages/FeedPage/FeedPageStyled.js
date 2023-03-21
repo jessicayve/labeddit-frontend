@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 
-export const StylePost = styled.section`
+export const PostBox = styled.section`
+
+
 input{
 display: flex;
 flex-direction: column;
