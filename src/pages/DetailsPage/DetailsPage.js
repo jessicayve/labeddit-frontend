@@ -66,6 +66,7 @@ const DetailsPage = (props) => {
     }
   }
 
+
   return (
    <>
    <Header/>
