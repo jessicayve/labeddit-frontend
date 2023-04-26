@@ -3,11 +3,12 @@ import styled from "styled-components";
 export const CardContainer = styled.div`
 display: flex;
 margin: 0 auto;
-width: 364px;
-height: 160px;
+width: 420px;
+height: 180px;
 border: 1px solid #E0E0E0;
 border-radius: 12px;
 margin-top: 20px;
+padding: 8px;
 span {   
 display: flex;
 justify-content: space-around;
@@ -18,6 +19,7 @@ border-radius: 12px;
 height: 23px;
 margin-top: 20px;
 margin-left: 10px;
+gap:10px;
 }
 p{
 padding: 9px;
@@ -32,15 +34,18 @@ color: #000000;
 margin-bottom: 12px;
 }
 h2{
-width: 132px;
-height: 16px;
-font-family: 'IBM Plex Sans';
-font-style: normal;
-font-weight: 400;
-font-size: 12px;
-line-height: 16px;
-text-align: center;
-color: #6F6F6F;
+ display: flex;
+ justify-content: center;
+ width: 132px;
+ height: 16px;
+ font-family: 'IBM Plex Sans';
+ font-style: normal;
+ font-weight: 400;
+ font-size: 12px;
+ line-height: 16px;
+ text-align: center;
+ color: #6F6F6F;
+
 }
 div{
     display: flex;
@@ -49,4 +54,5 @@ div{
     flex-wrap: wrap;
     
 }
+
 `

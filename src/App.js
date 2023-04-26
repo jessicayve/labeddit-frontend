@@ -3,7 +3,7 @@ import { GlobalContext } from "./context/GlobalContext"
 import { ChakraProvider } from '@chakra-ui/react'
 import Router from "./routes/Router"
 import axios from "axios"
-import { BASE_URL, TOKEN_NAME } from './constants/url'
+import { BASE_URL } from './constants/url'
 import { GlobalStyle } from './GlobalStyle'
 
 
@@ -13,7 +13,7 @@ function App() {
 const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    const token = window.localStorage.getItem(TOKEN_NAME);
+    const token = window.localStorage.getItem("labeddit-token");
 
     if (token) {
       fetchPosts()
@@ -22,7 +22,7 @@ const [posts, setPosts] = useState([]);
 
   const fetchPosts = async () => {
     try {
-      const token = window.localStorage.getItem(TOKEN_NAME);
+      const token = window.localStorage.getItem("labeddit-token");
 
       const config = {
         headers: {
@@ -35,7 +35,7 @@ const [posts, setPosts] = useState([]);
       setPosts(response.data)
     } catch (error) {
       console.error(error?.response?.data);
-      window.alert(error?.response?.data)
+      
     }
   }
 

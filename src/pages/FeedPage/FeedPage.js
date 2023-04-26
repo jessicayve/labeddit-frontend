@@ -5,8 +5,8 @@ import { useContext, useEffect, useState } from "react";
 import { goToLoginPage } from "../../routes/coordinator"
 import { PostBox } from "./FeedPageStyled"
 import axios from "axios"
-import { Linha } from "../LoginPage/LoginPageStyled"
-import { BASE_URL, TOKEN_NAME } from "../../constants/url"
+import { Line } from "../LoginPage/LoginPageStyled"
+import { BASE_URL } from "../../constants/url"
 import CardPost from "../../components/CardPost"
 
 
@@ -24,7 +24,7 @@ const FeedPage = () => {
   const [postContent, setPostContent] = useState("")
 
   useEffect(() => {
-    const token = window.localStorage.getItem(TOKEN_NAME);
+    const token = window.localStorage.getItem("labeddit-token");
 
     if (!token) {
       goToLoginPage(navigate);
@@ -38,7 +38,7 @@ const FeedPage = () => {
     setIsLoading(true)
 
     try {
-      const token = window.localStorage.getItem(TOKEN_NAME)
+      const token = window.localStorage.getItem("labeddit-token")
 
       const config = {
         headers: {
@@ -72,20 +72,20 @@ const FeedPage = () => {
         <input 
         value={postContent} 
         onChange={(e) => setPostContent(e.target.value)}
-        placeholder="Escreva seu post..."  />
+        placeholder="Write your post..."  />
 
       </section>
 
-      <button disabled={isLoading}>Postar</button>
+      <button onClick={createPost} disabled={isLoading}>Post</button>
 
       </form>
-    <Linha/>
+    <Line/>
 
-    </PostBox>
+    
     {posts.map((post) => {
-      return <CardPost key={post.id} post={post}  />;
+      return <CardPost key={post.id} post={post}  />
     })}
- 
+ </PostBox>
 
 </>
 

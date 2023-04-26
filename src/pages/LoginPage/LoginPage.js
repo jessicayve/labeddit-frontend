@@ -1,4 +1,4 @@
-import { Container, Input, Button, BtnContinuar, Linha } from "./LoginPageStyled"
+import { Container, Input, Button, BtnContinuar, Line } from "./LoginPageStyled"
 import logoLab from "../../assets/logoLab.png"
 import { useState } from "react"
 import axios from "axios"
@@ -57,10 +57,11 @@ export const LoginPage = () => {
       <Container>
         <div>
           <img src={logoLab}></img>
-          <p>O projeto de rede social da Labenu</p>
+          <p>A Cool Social Network</p>
         </div>
-      </Container>
-      <form onSubmit={login} autoComplete="off"> 
+      
+
+      
       <Input
         value={form.email}
         onChange={onChangeForm}
@@ -79,14 +80,13 @@ export const LoginPage = () => {
 
       />
       
-      </form>
+    
+      <BtnContinuar onClick={login} >  {isLoading ?  <CircularProgress color="inherit" size={30} /> : "Continue"} </BtnContinuar>
 
-      <BtnContinuar onClick={() => goToFeedPage(navigate)} >  {isLoading ?  <CircularProgress color="inherit"  /> : "Continuar"} </BtnContinuar>
+      <Line/>
 
-      <Linha></Linha>
-
-      <Button onClick={() => goToSignupPage(navigate)} >Crie uma conta!</Button>
-
+      <Button onClick={() => goToSignupPage(navigate)} >Create Your Account</Button>
+      </Container>
     </>
   )
 }

@@ -11,11 +11,11 @@ const Header = () => {
   return (
 
     <ContainerHeader>
-      <img src={logoPequena} alt="logo"></img>
+      
       <div>
         {location.pathname === "/signup" ?
 
-          <h2 onClick={() => goToLoginPage(navigate)}>Entrar</h2>
+          <h2 onClick={() => goToLoginPage(navigate)}>Login</h2>
           :
           <h2 onClick={() => goToLoginPage(navigate)}>Logout</h2>
 
