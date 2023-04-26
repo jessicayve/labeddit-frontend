@@ -1,7 +1,7 @@
 import { CardContainer } from "./CardPostStyled"
 import likeIcon from "../assets/likeIcon.png"
 import dislikeIcon from "../assets/dislikeIcon.png"
-import comentario from "../assets/comentario.png"
+
 import { useContext, useState } from "react"
 import { GlobalContext } from "../context/GlobalContext"
 import axios from "axios"
@@ -26,7 +26,7 @@ const CardPost = (props) => {
         setIsLoading(true)
 
         try {
-            const token = window.localStorage.getItem(TOKEN_NAME)
+            const token = window.localStorage.getItem("labeddit-token")
 
             const config = {
                 headers: {
@@ -50,7 +50,7 @@ const CardPost = (props) => {
         setIsLoading(true)
 
         try {
-            const token = window.localStorage.getItem(TOKEN_NAME)
+            const token = window.localStorage.getItem("labeddit-token")
 
             const config = {
                 headers: {
@@ -75,7 +75,7 @@ const CardPost = (props) => {
     return (
         <CardContainer >
             <div>
-                <h2>Enviado por:{props.post.creator.creatorName} </h2>
+                <h2>Send By: {props.post.creator.creatorName} </h2>
                 <p>{props.post.content} </p>
 
                 <div>
@@ -99,14 +99,7 @@ const CardPost = (props) => {
 
                     </span>
 
-                    <span className="comentario">
-                        <img src={comentario}
-                            alt="comentario" 
-                           
-                            />
-                        
-
-                    </span>
+                   
                 </div>
             </div>
         </CardContainer>
