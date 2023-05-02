@@ -17,6 +17,8 @@ div{
 }
 p{
     font-family: 'Rubik', sans-serif;
+    color:#FE7E02;
+    font-weight: 600;
 }
  `
 export const Input = styled.input`
@@ -47,6 +49,7 @@ font-size: 18px;
 text-align: center;
 color: #FFFFFF;
 border: none;
+margin-top: 10px;
 
 `
 

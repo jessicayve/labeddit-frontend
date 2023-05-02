@@ -35,7 +35,6 @@ margin-bottom: 12px;
 }
 h2{
  display: flex;
-
  width: 132px;
  height: 16px;
  font-family: 'IBM Plex Sans';

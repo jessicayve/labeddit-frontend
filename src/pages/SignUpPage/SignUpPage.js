@@ -103,7 +103,7 @@ const SignupPage = () => {
 
             </TextoContainer>
 
-            <Button onClick={signup} autoComplete="off"> {isLoading ? <CircularProgress color="inherit" size={30} /> : "Cadastrar"}</Button>
+            <Button onClick={signup} autoComplete="off"> {isLoading ? <CircularProgress color="inherit" size={30} /> : "Sign Up"}</Button>
             </Container>
         </>
     )
